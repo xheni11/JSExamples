@@ -1,0 +1,12 @@
+    /*     this.eventBusinesses = [];
+    this.eventBusinesses = this.data.map(
+      (eventBusiness: Partial<EventBusinessDTO>) => {
+        return {
+          id: eventBusiness.id,
+          nameBusiness: eventBusiness.business.name,
+          niptBusiness: eventBusiness.business.nipt,
+          sourceInfo: eventBusiness.sourceOfInfo,
+          notes: eventBusiness.notes
+        };
+      }
+    ); */

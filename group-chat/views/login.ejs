@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A simple group chat</title>
+    <link rel='stylesheet' href='./login/login.css' type='text/css' >
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script> 
+    <script src="./services/auth.js"></script>
+    <script src='./login/login.js'></script>
+    <base href="/">
+</head>
+<body>
+    <form method="GET"  id="loginForm">
+        <div id="login">Login</div>
+        <input type="text" id="usernameTxt" placeholder="Username" autofocus="on" required="required" >
+        <button id="loginBtn" >Login</button>
+        <a id="registerBtn" href="/register" >Register</a>
+    </form>
+</body>
+</html>

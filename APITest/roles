@@ -1,0 +1,158 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using MI.DTO.BO.Role;
+using MI.IP;
+using MI.WebApi.Converters;
+using MI.WebApi.Helpers;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace MI.WebApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RoleController : Controller
+    {
+        private readonly RoleManager<AppRole> _roleManager;
+
+        private readonly RoleConverter _conv;
+        // GET: /<controller>/
+        public RoleController(RoleManager<AppRole> roleManager)
+        {
+            _roleManager = roleManager;
+            _conv = new RoleConverter();
+
+        }
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<RoleDTO>), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Get()
+        {
+
+            IList<RoleDTO> roles = _roleManager.Roles.Select(_conv.Convert).ToList();
+            return Ok(roles);
+        }
+
+        [HttpGet]
+        [Route("get{id}")]
+        [ProducesResponseType(typeof(IEnumerable<RoleDTO>), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Get(int id)
+        {
+
+            AppRole role = await _roleManager.FindByIdAsync(id.ToString());
+            RoleDTO result = _conv.Convert(role);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(RoleDTO), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Create([FromBody]RoleDTO role)
+        {
+            AppRole appRole = _conv.Convert(role);
+            IdentityResult result = await _roleManager.CreateAsync(appRole);
+            if (result.Succeeded)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut]
+        [ProducesResponseType(typeof(RoleDTO), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Update([FromBody]RoleDTO role)
+        {
+            AppRole appRole = _conv.Convert(role);
+            IdentityResult result = await _roleManager.UpdateAsync(appRole);
+            if (result.Succeeded)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using MI.DTO.BO.Role;
+using MI.IP;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MI.WebApi.Converters
+{
+    internal class RoleConverter
+    {
+        internal RoleDTO Convert(AppRole role)
+        {
+            if (role == null)
+            {
+                return null;
+            }
+
+            return new RoleDTO()
+            {
+                Id = role.Id,
+                Name=role.Name
+                
+
+            };
+        }
+        internal AppRole Convert(RoleDTO role)
+        {
+            if (role == null)
+            {
+                return null;
+            }
+
+            return new AppRole()
+            {
+                Id = role.Id,
+                Name=role.Name
+
+            };
+        }
+
+        internal void Convert(RoleDTO roleDTO, ref AppRole appRole)
+        {
+            appRole.Name = roleDTO.Name;
+
+        }
+    }
+}
+
+
+        <div *ngIf="col.subfield; else normal">
+          {{ rowData[col.field][col.subfield] }}
+        </div>
+        <ng-template #normal>
+          {{ rowData[col.field] }}
+        </ng-template>

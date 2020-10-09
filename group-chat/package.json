@@ -1,0 +1,30 @@
+{
+  "name": "group-chat",
+  "version": "1.0.0",
+  "description": "App for chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "chat",
+    "group",
+    "message",
+    "app"
+  ],
+  "author": "XH.C",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "formidable": "^1.2.1",
+    "i": "^0.3.6",
+    "jquery": "^3.4.1",
+    "passport": "^0.4.0",
+    "requirejs": "^2.3.6",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {}
+}

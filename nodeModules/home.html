@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <form id="mathForm">
+      Enter X:<input type="text" id="x" /><br />
+      Enter Y:<input type="text" id="y" /><br />
+      Result: <span id="result"></span><br />
+      <button id="btnAdd" type="button">Add</button>
+    </form>
+    <script>
+      function add() {
+        var x = document.getElementById('x').value;
+        var y = document.getElementById('y').value;
+        var result = document.getElementById('result');
+        var xmlhttpReq = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var xmlDoc = xmlhttpReq.response;
+            var json = JSON.parse(xmlDoc);
+            result.innerHTML = json.result;
+          }
+        };
+        xmlhttpReq.open('GET', '/addition?x=' + x + '&y=' + y, false);
+        xmlhttpReq.send();
+      }
+
+      console.log('hey');
+      document.getElementById('btnAdd').addEventListener('click', add);
+    </script>
+  </body>
+</html>

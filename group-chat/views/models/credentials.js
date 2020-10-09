@@ -1,0 +1,6 @@
+var credentials={
+    username:""
+};
+
+
+

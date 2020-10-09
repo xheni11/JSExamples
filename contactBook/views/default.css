@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding: 0;
+    font-size:12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+aside,footer, header, hgroup, nav{
+    display: block;
+}
+
+body{
+    color:#776E65;
+    padding:10px;
+
+}
+header{
+    height:20px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+#headerText{
+    position: absolute;
+    top:0px;
+    width: 100%;
+}
+
+h1{
+    
+    font-size: 24px;
+}
+div[role="main"]{
+    float:left;
+    width:60%;
+    margin-top:3%;
+}
+#editContact{
+    background-color: #F8F8F8;
+    border: 1px solid #E1E1E1;
+    width: 400px;
+    margin-top:20px;
+}
+
+#editContact h2{
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    width:200px;
+}
+
+#editContact div{
+    width:350px;
+    padding:10px;
+}
+#editContact div.buttons{
+    text-align:center;
+}
+
+#editContact label{
+    width:150px;
+    height:12px;
+    clear: left;
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+#editContact input{
+    width:150px;
+    padding:2px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.edit,button{
+    width:45%;
+    padding:2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height:30px;
+    background-color: rgb(211, 212, 218);
+    border:0;
+    font-size: 14px;
+    position: relative;
+    margin-left:43%;
+    color:black;
+    text-decoration: none;
+    
+}
+
+.edit:hover,button:hover{
+    background-color: rgb(158, 159, 165);
+}
+.edit{
+    background-color: rgba(255, 255, 255,0);
+}
+#contacts{
+    width:400px;
+    border:1px solid #E1E1E1;
+    margin:0px;
+    padding:0px;
+}
+
+#contacts thead{
+    color: #7c756d;
+    font-weight: bold;
+    text-align: left;
+}
+
+#contacts tbody tr:nth-child(even){
+    background-color: #eee;
+}
+
+#contacts th{
+    border-color:#eee;
+    border-style:none none solid;
+    border-width:0 0 1px;
+}
+
+#contacts th,#contacts td{
+    margin:0px;
+    padding:5px 10px;
+}
+
