@@ -1,0 +1,7 @@
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\obj\Debug\InterviewExcercises.csprojAssemblyReference.cache
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\obj\Debug\InterviewExcercises.csproj.CoreCompileInputs.cache
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\bin\Debug\InterviewExcercises.exe.config
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\bin\Debug\InterviewExcercises.exe
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\bin\Debug\InterviewExcercises.pdb
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\obj\Debug\InterviewExcercises.exe
+C:\Users\xhcanaj\Documents\some_examples\InterviewExcercises\InterviewExcercises\obj\Debug\InterviewExcercises.pdb
